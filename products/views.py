@@ -40,7 +40,7 @@ class ProductSearch(APIView):
     def get(self, request):      
         query = request.GET.get('search')
         print(query)                
-        results = Products.objects.filter(Q(name__icontains=query) | Q(form__icontains=query))
+        results = Products.objects.filter(Q(name__icontains=query) | Q(form__icontains=query) | Q(primary_use__icontains=query))
         serialied_results = ProductSerializer(results, many=True)
         return Response(serialied_results.data)
 
@@ -50,7 +50,7 @@ class ProductDetailView(APIView):
         try:
             return Products.objects.get(pk=pk)
         except Products.DoesNotExist:
-            raise NotFound(detail="Can't find that album!")
+            raise NotFound(detail="Can't find that product!")
 
     def get(self, _request, pk):
         product = self.get_product(pk=pk)

@@ -1,0 +1,10 @@
+[
+{
+  "model": "requests.requests",
+  "pk": 1,
+  "fields": {
+    "item_name": "Lirrabirum",
+    "text": "I think its a yellow half scored tablet"
+  }
+}
+]

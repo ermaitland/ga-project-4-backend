@@ -1,0 +1,42 @@
+[
+{
+  "model": "brand.brand",
+  "pk": 2,
+  "fields": {
+    "name": "HillView Pharma",
+    "image": "https://mdlnext.mdlive.com/static/orange-shield.png"
+  }
+},
+{
+  "model": "brand.brand",
+  "pk": 3,
+  "fields": {
+    "name": "P.H Pharma",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA-Hxvqvq4eaeAn_8DKOTSxF3c9RjV4wi33A&usqp=CAU"
+  }
+},
+{
+  "model": "brand.brand",
+  "pk": 4,
+  "fields": {
+    "name": "Green Room Pharma",
+    "image": "https://media.istockphoto.com/id/1400537407/vector/n-letter-icon-vector-illustration-concept-design-template.jpg?b=1&s=612x612&w=0&k=20&c=d5Dw6vQhMYXjERWmlwy8WKMH5B5N4TBnHfem84HtBAE="
+  }
+},
+{
+  "model": "brand.brand",
+  "pk": 5,
+  "fields": {
+    "name": "Beta Pharma",
+    "image": "https://img.pikbest.com/png-images/amazing-health-care-medical-company-logo_1800819.png!w700wp"
+  }
+},
+{
+  "model": "brand.brand",
+  "pk": 6,
+  "fields": {
+    "name": "BultonGreeze",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTntWUo7IahKnig3qDoWnsugp9PYwyMqKqtw&usqp=CAU"
+  }
+}
+]

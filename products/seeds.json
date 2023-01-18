@@ -1,0 +1,21 @@
+[
+{
+  "model": "products.products",
+  "pk": 1,
+  "fields": {
+    "name": "Hydrolone",
+    "dose": "2.5mg",
+    "brand": 6,
+    "category": 3,
+    "image": "https://www.kelley-ferraro.com/wp-content/uploads/sites/1603470/2019/10/pink20pills.jpeg",
+    "form": "Circular pink tablet, no half score no marking",
+    "interactions": "None",
+    "side_effects": "Headaches",
+    "drive": false,
+    "food": false,
+    "primary_use": "Mild pain Relief",
+    "about": "Hydrolone, is a medication that is used for pain relief from mild pains such as headaches or joint pain. Hydrolone first came into large-scale commercial use recently, and before then was being worked on as an injected pain relief. The best way to administer this drug is through tablet form. In 2022, it was the 7th most sold medication in the UK, with more than 15 million tablets sold.",
+    "owner": 3
+  }
+}
+]
