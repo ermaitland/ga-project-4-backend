@@ -6,6 +6,7 @@ from rest_framework.exceptions import NotFound, PermissionDenied
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
 from .serializers.common import BrandSerializer
+from .serializers.populated import PopulatedBrandSerializer
 from .models import Brand
 
 class BrandListView(APIView):
@@ -36,7 +37,7 @@ class BrandDetailView(APIView):
 
     def get(self,_request, pk):
         brand = Brand.objects.get(pk=pk)
-        seralized_brand = BrandSerializer(brand)
+        seralized_brand = PopulatedBrandSerializer(brand)
         return Response (seralized_brand.data, status=status.HTTP_200_OK)
 
     def put(self, request, pk):

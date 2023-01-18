@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jwt_auth',
     'brand',
+    'category',
+    'products',
 ]
 
 MIDDLEWARE = [
