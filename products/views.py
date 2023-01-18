@@ -4,6 +4,8 @@ from rest_framework import status
 from rest_framework.exceptions import NotFound
 from django.db import IntegrityError
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from django.db.models import Q 
+from django.shortcuts import render 
 
 from .models import Products
 from .serializer.common import ProductSerializer
@@ -33,6 +35,14 @@ class ProductListView(APIView):
             return Response({"detail": str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
         except:
             return Response({"detail": "Unprocessable Entity"}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+class ProductSearch(APIView):
+    def get(self, request):      
+        query = request.GET.get('search')
+        print(query)                
+        results = Products.objects.filter(Q(name__icontains=query) | Q(form__icontains=query))
+        serialied_results = ProductSerializer(results, many=True)
+        return Response(serialied_results.data)
 
 class ProductDetailView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
