@@ -5,7 +5,7 @@ from rest_framework.exceptions import NotFound
 from django.db import IntegrityError
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.db.models import Q 
-from django.shortcuts import render 
+
 
 from .models import Products
 from .serializer.common import ProductSerializer
