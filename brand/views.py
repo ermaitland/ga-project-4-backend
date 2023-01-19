@@ -56,6 +56,13 @@ class BrandDetailView(APIView):
         except:
             return Response({"detail": "Unprocessable Entity"}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
     
+class BrandSearch(APIView):
+    def get(self, request):      
+        query = request.GET.get('search')              
+        results = Brand.objects.filter(name__icontains=query)
+        serialied_results = BrandSerializer(results, many=True)
+        return Response(serialied_results.data)
+    
     def delete(self, request, pk):
         try:
           brand_to_delete = Brand.objects.get(pk=pk)

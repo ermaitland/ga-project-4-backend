@@ -4,11 +4,17 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import PermissionDenied
 from .serializers.common import RequestsSerializer
+from .serializers.populated import PopulatedRequestSerializer
 from django.db import IntegrityError
 
 from .models import Requests
 
 class RequestsListView(APIView):
+
+    def get(self, _request):
+      requests_to_edit = Requests.objects.all()
+      serialized_requests = PopulatedRequestSerializer(requests_to_edit, many=True)
+      return Response(serialized_requests.data, status=status.HTTP_200_OK)
     
     def post(self, request):
       request_to_add = RequestsSerializer(data=request.data)
