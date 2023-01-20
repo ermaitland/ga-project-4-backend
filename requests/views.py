@@ -11,13 +11,15 @@ from .models import Requests
 
 class RequestsListView(APIView):
 
-    def get(self, request):    
+    def post(self, request):  
       is_staff = request.user.is_staff
       if not is_staff:
-          raise PermissionDenied()
+        raise PermissionDenied()
       requests_to_edit = Requests.objects.all()
       serialized_requests = PopulatedRequestSerializer(requests_to_edit, many=True)
       return Response(serialized_requests.data, status=status.HTTP_200_OK)
+
+class RequestCreate(APIView):
     
     def post(self, request):
       request_to_add = RequestsSerializer(data=request.data)

@@ -23,7 +23,7 @@
   "pk": 2,
   "fields": {
     "name": "Wardalid",
-    "dose": "5mg",
+    "dose": "10mg",
     "brand": 3,
     "category": 4,
     "image": "https://media.istockphoto.com/id/147716945/photo/oval-orange-tablets.jpg?s=612x612&w=0&k=20&c=FBE9WTogpYQmmHXyPJYCf8UrYs_ialUtX3X8mCf-eGk=",
@@ -34,7 +34,7 @@
     "food": true,
     "primary_use": "Anticoagulant (blood thinner)",
     "about": "Wardalid, sold under the brand name Cerbit among others, is a medication that is used as an anticoagulant (blood thinner).[6] It is commonly used to prevent blood clots, deep vein thrombosis and pulmonary embolisms. Wardalid first came into large-scale commercial use in 1948 as a rat poison. In 2020, it was the 58th most commonly prescribed medication in the UK, with more than 11 million prescriptions.",
-    "owner": 10
+    "owner": 3
   }
 },
 {
@@ -167,6 +167,25 @@
     "food": false,
     "primary_use": "Stomach Ulcers",
     "about": "Trectivol is an antibiotic medication used to reduce the symptoms of stomach ulcers. This capsule has been available to by from Pharmacies since 2002, before this point the sale of Trectivol was highly controlled due to its apparent hallucinogenic properties. These properties have been disproven. In 2020, it was the 40th most abused medication, leading to discussions about increasing the class of it.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 10,
+  "fields": {
+    "name": "Lestiazipam",
+    "dose": "5mg",
+    "brand": 3,
+    "category": 4,
+    "image": "https://www.rxsaver.com/_next/static/images/blue-oval-pill-58a780eadff2b8d9bb04eb4472c55d6f.jpg",
+    "form": "Blue oval tablet, half scored on both sides",
+    "interactions": "Nordiazepam and the effects of alcohol will be enhanced",
+    "side_effects": "Lethargic and bloating",
+    "drive": false,
+    "food": false,
+    "primary_use": "Anxiety",
+    "about": "Lestiazipam is an anxiety medication used to reduce extreme episodes of anxiety. This tablet is only available via prescription and is not prescribed often due to its high addictive nature. In 2022, it was voted the 9th best anti-anxiety medication on the market and more research is being pushed in order to increase the positive effects.",
     "owner": 3
   }
 }
