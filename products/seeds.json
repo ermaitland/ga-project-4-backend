@@ -150,5 +150,24 @@
     "about": "Dloxerentine sold under the brand names Hilmoc and Tresadone, among others, is a selective serotonin reuptake inhibitor (SSRI). It is used for the treatment of OCD and panic disorder.  Dloxerentine was discovered by HillView Pharma in 1972, and entered medical use in 1986. In 2020, it was the 25th most commonly prescribed medication in the UK, with more than 23 million prescriptions.",
     "owner": 3
   }
+},
+{
+  "model": "products.products",
+  "pk": 9,
+  "fields": {
+    "name": "Trectivol",
+    "dose": "1mg",
+    "brand": 5,
+    "category": 2,
+    "image": "https://i.natgeofe.com/n/fdce569b-7c57-44ed-9c00-ff2dea73397e/molnu-capsule5_4x3.jpg",
+    "form": "Red capsule with 82 marked on the side",
+    "interactions": "Tabacco and Rambaoxinal",
+    "side_effects": "Rash, acne, dry skin and hair loss",
+    "drive": false,
+    "food": false,
+    "primary_use": "Stomach Ulcers",
+    "about": "Trectivol is an antibiotic medication used to reduce the symptoms of stomach ulcers. This capsule has been available to by from Pharmacies since 2002, before this point the sale of Trectivol was highly controlled due to its apparent hallucinogenic properties. These properties have been disproven. In 2020, it was the 40th most abused medication, leading to discussions about increasing the class of it.",
+    "owner": 3
+  }
 }
 ]

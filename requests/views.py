@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.exceptions import PermissionDenied
 from .serializers.common import RequestsSerializer
 from .serializers.populated import PopulatedRequestSerializer
@@ -11,7 +11,10 @@ from .models import Requests
 
 class RequestsListView(APIView):
 
-    def get(self, _request):
+    def get(self, request):    
+      is_staff = request.user.is_staff
+      if not is_staff:
+          raise PermissionDenied()
       requests_to_edit = Requests.objects.all()
       serialized_requests = PopulatedRequestSerializer(requests_to_edit, many=True)
       return Response(serialized_requests.data, status=status.HTTP_200_OK)
