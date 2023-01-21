@@ -24,3 +24,6 @@ python manage.py loaddata products/seeds.json
 
 echo "inserting requests"
 python manage.py loaddata requests/seeds.json
+
+echo "inserting FAQs"
+python manage.py loaddata FAQs/seeds.json

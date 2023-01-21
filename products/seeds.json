@@ -176,13 +176,13 @@
   "fields": {
     "name": "Lestiazipam",
     "dose": "5mg",
-    "brand": 3,
-    "category": 4,
+    "brand": 7,
+    "category": 3,
     "image": "https://www.rxsaver.com/_next/static/images/blue-oval-pill-58a780eadff2b8d9bb04eb4472c55d6f.jpg",
     "form": "Blue oval tablet, half scored on both sides",
     "interactions": "Nordiazepam and the effects of alcohol will be enhanced",
     "side_effects": "Lethargic and bloating",
-    "drive": false,
+    "drive": true,
     "food": false,
     "primary_use": "Anxiety",
     "about": "Lestiazipam is an anxiety medication used to reduce extreme episodes of anxiety. This tablet is only available via prescription and is not prescribed often due to its high addictive nature. In 2022, it was voted the 9th best anti-anxiety medication on the market and more research is being pushed in order to increase the positive effects.",
@@ -191,7 +191,7 @@
 },
 {
   "model": "products.products",
-  "pk": 11,
+  "pk": 16,
   "fields": {
     "name": "Grilzdimol",
     "dose": "400mg",
@@ -202,7 +202,7 @@
     "interactions": "None",
     "side_effects": "Drowsiness",
     "drive": false,
-    "food": false,
+    "food": true,
     "primary_use": "Cough, cold and sore throats",
     "about": "Grilzdmol is a tablet taken to help numb sore and itchy throats. This tablet is available through general sale and can be found in all major supermarkets. In 2000, when it was released to the public, sales quickly because the highest of any other throat medication.",
     "owner": 3
