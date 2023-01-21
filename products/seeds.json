@@ -188,5 +188,24 @@
     "about": "Lestiazipam is an anxiety medication used to reduce extreme episodes of anxiety. This tablet is only available via prescription and is not prescribed often due to its high addictive nature. In 2022, it was voted the 9th best anti-anxiety medication on the market and more research is being pushed in order to increase the positive effects.",
     "owner": 3
   }
+},
+{
+  "model": "products.products",
+  "pk": 11,
+  "fields": {
+    "name": "Grilzdimol",
+    "dose": "400mg",
+    "brand": 7,
+    "category": 3,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Abili.JPG/640px-Abili.JPG",
+    "form": "Yellow round tablets marked A-009 15",
+    "interactions": "None",
+    "side_effects": "Drowsiness",
+    "drive": false,
+    "food": false,
+    "primary_use": "Cough, cold and sore throats",
+    "about": "Grilzdmol is a tablet taken to help numb sore and itchy throats. This tablet is available through general sale and can be found in all major supermarkets. In 2000, when it was released to the public, sales quickly because the highest of any other throat medication.",
+    "owner": 3
+  }
 }
 ]

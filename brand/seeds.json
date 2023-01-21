@@ -38,5 +38,13 @@
     "name": "BultonGreeze",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTntWUo7IahKnig3qDoWnsugp9PYwyMqKqtw&usqp=CAU"
   }
+},
+{
+  "model": "brand.brand",
+  "pk": 7,
+  "fields": {
+    "name": "Medical Solutions",
+    "image": "https://t4.ftcdn.net/jpg/01/22/04/45/360_F_122044550_CjRVM90rIus8RcB2B3jVe5DX0myf6DF8.jpg"
+  }
 }
 ]
