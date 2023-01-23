@@ -15,8 +15,8 @@ class RequestsListView(APIView):
       is_staff = request.user.is_staff
       if not is_staff:
         raise PermissionDenied()
-      requests_to_edit = Requests.objects.all()
-      serialized_requests = PopulatedRequestSerializer(requests_to_edit, many=True)
+      requests = Requests.objects.all()
+      serialized_requests = PopulatedRequestSerializer(requests, many=True)
       return Response(serialized_requests.data, status=status.HTTP_200_OK)
 
 class RequestCreate(APIView):
@@ -36,3 +36,5 @@ class RequestCreate(APIView):
             return Response({"detail": str(e)}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
       except:
             return Response({"detail": "Unprocessable Entity"}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+        
