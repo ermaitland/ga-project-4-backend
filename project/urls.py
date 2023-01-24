@@ -23,5 +23,6 @@ urlpatterns = [
     path('api/category/', include('category.urls')),
     path('api/products/', include('products.urls')),
     path('api/requests/', include('requests.urls')),
-    path('api/faqs/', include('FAQs.urls'))
+    path('api/faqs/', include('FAQs.urls')),
+    path('api/myMeds/', include('my_meds.urls'))
 ]

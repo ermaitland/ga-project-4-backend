@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'products',
     'requests',
     'FAQs',
+    'my_meds',
 ]
 
 MIDDLEWARE = [
