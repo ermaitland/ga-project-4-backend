@@ -6,6 +6,7 @@ from rest_framework.exceptions import PermissionDenied
 from .serializers.common import RequestsSerializer
 from .serializers.populated import PopulatedRequestSerializer
 from django.db import IntegrityError
+from rest_framework.exceptions import NotFound
 
 from .models import Requests
 
@@ -37,4 +38,11 @@ class RequestCreate(APIView):
       except:
             return Response({"detail": "Unprocessable Entity"}, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
-        
+class RequestDetailView(APIView):
+    def delete(self, _request, pk):
+        try:
+          request_to_delete = Requests.objects.get(pk=pk)
+          request_to_delete.delete()
+          return Response(status=status.HTTP_204_NO_CONTENT)
+        except Requests.DoesNotExist:
+          raise NotFound(detail="Not found") 
