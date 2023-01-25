@@ -4,6 +4,7 @@ from rest_framework import status
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.exceptions import NotFound
 from datetime import datetime, timedelta
+from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
@@ -43,15 +44,18 @@ class LoginView(APIView):
         return Response({'token': token, 'message': f"Welcome back {user_to_login.username}!"})
 
 class UserDetail(APIView):
-    def get(self,_request, pk):
+    def get(self, request, pk):
         user = User.objects.get(pk=pk)
         seralized_user = PopulatedUserSerializer(user)
         return Response (seralized_user.data, status=status.HTTP_200_OK)
 
 class UserDetailDelete(APIView):
-    def delete(self, _request, pk):
+    permission_classes = (IsAuthenticated, )
+    def delete(self, request, pk):
         try:
           medication_to_delete = MyMeds.objects.get(pk=pk)
+          if medication_to_delete.owner != request.user:
+              raise PermissionDenied()
           medication_to_delete.delete()
           return Response(status=status.HTTP_204_NO_CONTENT)
         except MyMeds.DoesNotExist:
