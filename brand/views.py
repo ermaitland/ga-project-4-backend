@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.db import IntegrityError
-from rest_framework.exceptions import NotFound, PermissionDenied
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from rest_framework.exceptions import NotFound
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .serializers.common import BrandSerializer
 from .serializers.populated import PopulatedBrandSerializer
@@ -42,8 +42,6 @@ class BrandDetailView(APIView):
 
     def put(self, request, pk):
         brand_to_edit = Brand.objects.get(pk=pk)
-        # if brand_to_edit.owner != request.user:
-        #       raise PermissionDenied()
         updated_brand = BrandSerializer(brand_to_edit, data=request.data)
         try:
             updated_brand.is_valid()
@@ -63,11 +61,9 @@ class BrandSearch(APIView):
         serialied_results = BrandSerializer(results, many=True)
         return Response(serialied_results.data)
     
-    def delete(self, request, pk):
+    def delete(self, _request, pk):
         try:
           brand_to_delete = Brand.objects.get(pk=pk)
-          # if brand_to_delete.owner != request.user:
-          #     raise PermissionDenied()
           brand_to_delete.delete()
           return Response(status=status.HTTP_204_NO_CONTENT)
         except Brand.DoesNotExist:

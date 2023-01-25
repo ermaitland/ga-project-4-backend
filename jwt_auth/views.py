@@ -44,7 +44,7 @@ class LoginView(APIView):
         return Response({'token': token, 'message': f"Welcome back {user_to_login.username}!"})
 
 class UserDetail(APIView):
-    def get(self, request, pk):
+    def get(self, _request, pk):
         user = User.objects.get(pk=pk)
         seralized_user = PopulatedUserSerializer(user)
         return Response (seralized_user.data, status=status.HTTP_200_OK)
