@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import PermissionDenied
+from rest_framework.exceptions import NotFound
 from datetime import datetime, timedelta
 from django.contrib.auth import get_user_model
 from django.conf import settings
@@ -9,6 +10,7 @@ import jwt
 
 from .serializers.common import UserSerializer
 from .serializers.populated import PopulatedUserSerializer
+from my_meds.models import MyMeds
 
 User = get_user_model()
 
@@ -45,3 +47,12 @@ class UserDetail(APIView):
         user = User.objects.get(pk=pk)
         seralized_user = PopulatedUserSerializer(user)
         return Response (seralized_user.data, status=status.HTTP_200_OK)
+
+class UserDetailDelete(APIView):
+    def delete(self, _request, pk):
+        try:
+          medication_to_delete = MyMeds.objects.get(pk=pk)
+          medication_to_delete.delete()
+          return Response(status=status.HTTP_204_NO_CONTENT)
+        except MyMeds.DoesNotExist:
+          raise NotFound(detail="Not found") 
