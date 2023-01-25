@@ -30,3 +30,13 @@ class MyMedsList(APIView):
       requests = MyMeds.objects.all()
       serialized_requests = PopulatedMedsSerializer(requests, many=True)
       return Response(serialized_requests.data, status=status.HTTP_200_OK)
+
+
+class MyMedsDetailView(APIView):
+    def delete(self, _request, pk):
+        try:
+          medication_to_delete = MyMeds.objects.get(pk=pk)
+          medication_to_delete.delete()
+          return Response(status=status.HTTP_204_NO_CONTENT)
+        except MyMeds.DoesNotExist:
+          raise NotFound(detail="Not found") 
