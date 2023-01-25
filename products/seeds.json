@@ -1,0 +1,211 @@
+[
+{
+  "model": "products.products",
+  "pk": 1,
+  "fields": {
+    "name": "Hydrolone",
+    "dose": "2.5mg",
+    "brand": 6,
+    "category": 3,
+    "image": "https://www.kelley-ferraro.com/wp-content/uploads/sites/1603470/2019/10/pink20pills.jpeg",
+    "form": "Circular pink tablet, no half score no marking",
+    "interactions": "None",
+    "side_effects": "Headaches",
+    "drive": false,
+    "food": false,
+    "primary_use": "Mild pain Relief",
+    "about": "Hydrolone, is a medication that is used for pain relief from mild pains such as headaches or joint pain. Hydrolone first came into large-scale commercial use recently, and before then was being worked on as an injected pain relief. The best way to administer this drug is through tablet form. In 2022, it was the 7th most sold medication in the UK, with more than 15 million tablets sold.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 2,
+  "fields": {
+    "name": "Wardalid",
+    "dose": "10mg",
+    "brand": 3,
+    "category": 4,
+    "image": "https://media.istockphoto.com/id/147716945/photo/oval-orange-tablets.jpg?s=612x612&w=0&k=20&c=FBE9WTogpYQmmHXyPJYCf8UrYs_ialUtX3X8mCf-eGk=",
+    "form": "Orange oblong tablet with half score on both sides",
+    "interactions": "None reported",
+    "side_effects": "Insomnia, rash, frequent urination",
+    "drive": false,
+    "food": true,
+    "primary_use": "Anticoagulant (blood thinner)",
+    "about": "Wardalid, sold under the brand name Cerbit among others, is a medication that is used as an anticoagulant (blood thinner).[6] It is commonly used to prevent blood clots, deep vein thrombosis and pulmonary embolisms. Wardalid first came into large-scale commercial use in 1948 as a rat poison. In 2020, it was the 58th most commonly prescribed medication in the UK, with more than 11 million prescriptions.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 3,
+  "fields": {
+    "name": "Marafitil",
+    "dose": "25mg",
+    "brand": 6,
+    "category": 4,
+    "image": "https://t4.ftcdn.net/jpg/04/80/99/95/360_F_480999563_rL5EsJ3zW9IzJKESNnQXWbuHsH6sewHr.webp",
+    "form": "Dark green tablet, no markings",
+    "interactions": "Moisturiser, disinfectant and perfumes",
+    "side_effects": "Insomnia and increased heart rate",
+    "drive": true,
+    "food": false,
+    "primary_use": "Antifungal",
+    "about": "Marafitil, sold under the brand name Fungone among others, is a medication that is used as an antifungal. It is commonly used to prevent fungal infections, and to eliminate the infection. Marafitil first came into large-scale commercial use in 1998 as a multivitamin, but on further research it was diverted to treat and prevent recurrent fungal infections. In 2022, it was the 97th most commonly prescribed medication in the UK, with more than 5 million prescriptions.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 4,
+  "fields": {
+    "name": "Activium",
+    "dose": "1000mg",
+    "brand": 5,
+    "category": 4,
+    "image": "https://www.verywellhealth.com/thmb/7crbKAJKBsHbwuHWIfCg_VCR78c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/the-health-benefits-of-boswellia-89549-inline-8c18e4be714740ce89f6c6db94b101b1.jpg",
+    "form": "Yellow mottled oblong tablets, no markings",
+    "interactions": "Alcohol, Paracetamol, Metformin",
+    "side_effects": "Insomnia, nose bleeds, headache and dizziness",
+    "drive": true,
+    "food": true,
+    "primary_use": "Antibacterial",
+    "about": "Activium is an antibiotic medication used to treat several bacterial infections. These include ear infections, throat infections, pneumonia, and skin infections. It is taken by mouth, or less commonly by injection. Activium was discovered in 1958 and came into medical use in 1972. It was approved for medical use in the United States in 1974, and in the United Kingdom in 1977. In 2020, it was the 40th most prescribed medication in the UK, with more than 15 million prescriptions.",
+    "owner": 10
+  }
+},
+{
+  "model": "products.products",
+  "pk": 5,
+  "fields": {
+    "name": "Paradetimal",
+    "dose": "500mg",
+    "brand": 4,
+    "category": 3,
+    "image": "https://media.istockphoto.com/id/1217172454/photo/heap-of-white-round-pills-or-tablets.jpg?s=612x612&w=0&k=20&c=mL0druNSiU0SbyMHsqKrrqyHGMOwiOophLApUW88O8s=",
+    "form": "White circular tablet, half scored on both sides",
+    "interactions": "St John’s Wart, morphine",
+    "side_effects": "Nausea, vomiting, sweating",
+    "drive": true,
+    "food": false,
+    "primary_use": "Pain relief and reduce high fe",
+    "about": "Paradetimal, also known as acetremotiphen, is a medication used to treat fever and mild to moderate pain. In the short term, it is safe and effective when used as directed. Short term adverse effects are uncommon and similar to ibuprofen, but paracetamol is typically safer than NSAIDs for long term use. The recommended maximum daily dose for an adult is three to four grams. Higher doses may lead to toxicity, including liver failure. Paradetimal was first made in 1852. In 2020, it was the 118th most commonly sold medication in the UK, with more than 5 million sales.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 6,
+  "fields": {
+    "name": "Copladol",
+    "dose": "8mg/5mg",
+    "brand": 2,
+    "category": 2,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoRkAuWVxcIKmTsIWelj2KHF04tYdcN2244g&usqp=CAU",
+    "form": "Effervescent tablet, plain white, circular and plain on both sides",
+    "interactions": "Deep heat, Ibuprofen, Naproxen",
+    "side_effects": "Rash, feeling hot, excess sweating",
+    "drive": true,
+    "food": false,
+    "primary_use": "Pain Relief",
+    "about": "Copladol, is a compound. Copladol is used for the relief of mild to moderate pain when paracetamol or ibuprofen alone do not sufficiently relieve symptoms. In 2020, it was the 187th most commonly sold medication in pharmacies in the UK, with more than 2 million sales.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 7,
+  "fields": {
+    "name": "Lirrabirum",
+    "dose": "15mg",
+    "brand": 3,
+    "category": 4,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4ByK0QEcxtQMMO0fdmY9nJgQSGkPnyljwGQ&usqp=CAU",
+    "form": "Orange, film-coated round tablet, plain on both sides",
+    "interactions": "Amoxicillin, Lithium, Ibuprofen and Cranberry juice",
+    "side_effects": "Insomnia, increased thirst, tingly hands/feet",
+    "drive": false,
+    "food": true,
+    "primary_use": "High Blood pressure",
+    "about": "Lirrabium, sold under the brand name Nopraxet, among others, is a monoamine oxidase (MAOI) of the hydrazine class which is primarily used to lower blood pressure. It is one of the few non-selective and irreversible MAOIs still in widespread clinical use. It is typically available in 15 mg tablets and doses usually range from 15–90 mg per day.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 8,
+  "fields": {
+    "name": "Dloxerentine",
+    "dose": "20mg",
+    "brand": 2,
+    "category": 4,
+    "image": "https://www.collinsdictionary.com/images/full/capsule_639127393_1000.jpg",
+    "form": "Blue and White capsule with no markings",
+    "interactions": "Alcohol, Lithium, Vanilla extract",
+    "side_effects": "Indigestion, insomnia and dry mouth",
+    "drive": false,
+    "food": true,
+    "primary_use": "Anxiety",
+    "about": "Dloxerentine sold under the brand names Hilmoc and Tresadone, among others, is a selective serotonin reuptake inhibitor (SSRI). It is used for the treatment of OCD and panic disorder.  Dloxerentine was discovered by HillView Pharma in 1972, and entered medical use in 1986. In 2020, it was the 25th most commonly prescribed medication in the UK, with more than 23 million prescriptions.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 9,
+  "fields": {
+    "name": "Trectivol",
+    "dose": "1mg",
+    "brand": 5,
+    "category": 2,
+    "image": "https://i.natgeofe.com/n/fdce569b-7c57-44ed-9c00-ff2dea73397e/molnu-capsule5_4x3.jpg",
+    "form": "Red capsule with 82 marked on the side",
+    "interactions": "Tabacco and Rambaoxinal",
+    "side_effects": "Rash, acne, dry skin and hair loss",
+    "drive": false,
+    "food": false,
+    "primary_use": "Stomach Ulcers",
+    "about": "Trectivol is an antibiotic medication used to reduce the symptoms of stomach ulcers. This capsule has been available to by from Pharmacies since 2002, before this point the sale of Trectivol was highly controlled due to its apparent hallucinogenic properties. These properties have been disproven. In 2020, it was the 40th most abused medication, leading to discussions about increasing the class of it.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 10,
+  "fields": {
+    "name": "Lestiazipam",
+    "dose": "5mg",
+    "brand": 7,
+    "category": 3,
+    "image": "https://www.rxsaver.com/_next/static/images/blue-oval-pill-58a780eadff2b8d9bb04eb4472c55d6f.jpg",
+    "form": "Blue oval tablet, half scored on both sides",
+    "interactions": "Nordiazepam and the effects of alcohol will be enhanced",
+    "side_effects": "Lethargic and bloating",
+    "drive": true,
+    "food": false,
+    "primary_use": "Anxiety",
+    "about": "Lestiazipam is an anxiety medication used to reduce extreme episodes of anxiety. This tablet is only available via prescription and is not prescribed often due to its high addictive nature. In 2022, it was voted the 9th best anti-anxiety medication on the market and more research is being pushed in order to increase the positive effects.",
+    "owner": 3
+  }
+},
+{
+  "model": "products.products",
+  "pk": 16,
+  "fields": {
+    "name": "Grilzdimol",
+    "dose": "400mg",
+    "brand": 7,
+    "category": 3,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Abili.JPG/640px-Abili.JPG",
+    "form": "Yellow round tablets marked A-009 15",
+    "interactions": "None",
+    "side_effects": "Drowsiness",
+    "drive": false,
+    "food": true,
+    "primary_use": "Cough, cold and sore throats",
+    "about": "Grilzdmol is a tablet taken to help numb sore and itchy throats. This tablet is available through general sale and can be found in all major supermarkets. In 2000, when it was released to the public, sales quickly because the highest of any other throat medication.",
+    "owner": 3
+  }
+}
+]

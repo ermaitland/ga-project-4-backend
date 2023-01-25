@@ -1,0 +1,47 @@
+[
+{
+  "model": "requests.requests",
+  "pk": 1,
+  "fields": {
+    "products": 7,
+    "text": "I think its a yellow half scored tablet",
+    "user": 3
+  }
+},
+{
+  "model": "requests.requests",
+  "pk": 2,
+  "fields": {
+    "products": 3,
+    "text": "It also causes heart palpitations",
+    "user": 3
+  }
+},
+{
+  "model": "requests.requests",
+  "pk": 3,
+  "fields": {
+    "products": 3,
+    "text": "I don't think it was only at this strength, please can you add the other strengths in :)",
+    "user": 3
+  }
+},
+{
+  "model": "requests.requests",
+  "pk": 4,
+  "fields": {
+    "products": 4,
+    "text": "I think its a liquid filled capsule now",
+    "user": 3
+  }
+},
+{
+  "model": "requests.requests",
+  "pk": 5,
+  "fields": {
+    "products": 6,
+    "text": "This also gave me itchy feet",
+    "user": 3
+  }
+}
+]
