@@ -157,7 +157,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://63d391604a5c4d63664ff9f3--medichecker.netlify.app",
+    "https://medichecker.netlify.app",
 ]
 
 django_on_heroku.settings(locals())
