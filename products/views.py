@@ -38,7 +38,7 @@ class ProductListView(APIView):
 
 class ProductSearch(APIView):
     def get(self, request):      
-        query = request.GET.get('search')              
+        query = request.GET.get('search')             
         results = Products.objects.filter(Q(name__icontains=query) | Q(form__icontains=query) | Q(primary_use__icontains=query))
         serialied_results = ProductSerializer(results, many=True)
         return Response(serialied_results.data)
