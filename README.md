@@ -160,7 +160,7 @@ if (singleProduct?.drive) {
 }
 ```
 
-I did this so that when it was presented on the page it didn't show “true” or “false” but “yes” or “no” as I felt this was a better way to present the data.
+I did this so that when it was presented on the page it didn't show “true” or “false” but “Yes” or “No” as I felt this was a better way to present the data.
 
 When I created a product page, I decided I wanted some different ways to input the data. For project 3 I used a drag and drop, so this time for the true or false values I decided to use a switch. The switch had two options, true or false, and I simply added the two checked values to the formData and then passed it into the API request:
 
@@ -245,11 +245,11 @@ useEffect(() => {
 
 # Wins
 
-We had the choose to go solo or in a group for this project, as I have been in a group the majority of the time and as I wanted to test myself I decided to go alone, even though I knew it would be tough to produce the level of finished product I had in my mind, but I am very proud that I managed to do it on my own. I think it can be nicer working in a group but it’s a great feeling to achieve a product and know you were responsible for everything.
+We had the choose to go solo or in a group for this project, as I have been in a group the majority of the time and as I wanted to test myself I decided to go alone, even though I knew it would be tough to produce the level of finished product I had in my mind, but I am very proud that I managed to do it on my own. I think it can be nice to work in a group but it’s a great feeling to achieve a product and know you were responsible for everything.
 
 # Key Learnings/Takeaways
 
-Through all the projects it has been vital to plan your work ahead of time, but with groups the idea evolves in many ways throughout the process and you must be flexible to work with this. On a solo project the planning is essential, you cannot just muddle your way through. I am grateful I made such a detailed plan and knew exactly where I wanted to take the application next. This saved a lot of time and made the execution of each task much smoother.
+Through all the projects it has been vital to plan your work ahead of time, but with groups the idea evolves in many ways throughout the process and you must be flexible to work with this. On a solo project the planning is essential, you cannot just muddle your way through. I am grateful I made such a detailed plan and knew exactly where I wanted to take the application next. This saved a lot of time and made the execution of each task much smoother. I feel a lot more comfortable with python now that I have built something with it. The practical experience has made some concepts much clearer for me.
 
 # Bugs
 
