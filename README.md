@@ -2,11 +2,15 @@
 
 # Description
 
-For this project I had one week to create a full stack app. We had the choice to go solo or in a group, and I chose to try on my own. I wanted to push myself and see what I could do after three months of learning, and I had only done one project on my own in the past. The project had a Django backend, using postgres, and the front end was a React.js app.
+This was the fourth project in the General Assembly software engineering immersive. For this project I had one week to create a full stack app. We had the choice to go solo or in a group, and I chose to try on my own. I wanted to push myself and see what I could do after three months of learning, and I had only done one project on my own in the past. The project had a Django backend, using postgres, and the front end was a React.js app. I decided to go for a passion of mine, medical tech - and create a medical information and tracker website.
 
 # Deployment link
 
 https://medichecker.netlify.app
+You can log in with the credentials:
+
+- Username: Test
+- Password: Password!1
 
 # Getting Started/Code Installation
 
@@ -17,7 +21,7 @@ Use
  code .
 ```
 
-to open the code in VS.
+to open the code in VS. You will need to have python installed on your machine.
 Run the commands:
 
 ```py
@@ -69,13 +73,19 @@ You must:
 
 # Planning
 
-As I chose to do this project alone I had to plan in detail in order to make sure I didn’t waste time further down the line. I started by thinking about what website would be good to make, a mix between something I am interested in and something which would be challenging but achievable. Due to my past work I am fascinated by pharmaceuticals. I find the way they work in the body amazing and how most people don’t know enough about them (including me!). So I decided to make MediChecker, a user-friendly website where people can go to look up their medications and check any interactions or if the side effects they’re getting are normal. I think this is a good place to make clear I am not a pharmacist or a doctor, and therefore ALL the medications on the website have been completely made up by me to seed the database. I then made a flow diagram to see how everything was going to fit together, for this I used figma:
+As I chose to do this project alone I had to plan in detail in order to make sure I didn’t waste time further down the line. I started by thinking about what website would be good to make, a mix between something I am interested in and something which would be challenging but achievable. Due to my past work I am fascinated by pharmaceuticals. I find the way they work in the body amazing and how most people don’t know enough about them (including me!). So I decided to make MediChecker, a user-friendly website where people can go to look up their medications and check any interactions or if the side effects they’re getting are normal. I think this is a good place to make clear I am not a pharmacist or a doctor, and therefore ALL the medications on the website have been completely made up by me to seed the database.
+
+## Firstly:
+
+I made a flow diagram to see how everything was going to fit together, for this I used figma:
 
 <img alt='figma plan' src='./ReadMe_assets/figma.png'>
 
 I had decided to make one central model, and have the users be able to add products and brands, with the products and brands feeding into each other. The legal category is a model of its own, mainly as there are only three legal categories of drugs, P (pharmacy), POM (prescription only medicines) and GSL (general sales list). So to ensure the final website would look uniform I added a model so people could choose the relevant option. I also made a request section. As only the ‘owner’ of a product can change the information, and let's face it - we all make mistakes, the requests are there to request a change on any of the medications you can see. This will go to the admin who is a superuser and so can make edits on everything.
 
-Next I did a wireframe of the frontend so I went in with a clear idea of what I was going to set out to produce by the end of one week.
+## Secondly:
+
+I did a wireframe of the frontend so I went in with a clear idea of what I was going to set out to produce by the end of one week.
 
 <img alt='frontEnd wire frame' src='./ReadMe_assets/mural.png'>
 
@@ -114,21 +124,19 @@ class LoginView(APIView):
         return Response({'token': token, 'message': f"Welcome back {user_to_login.username}!"})
 ```
 
-These allowed me to make a non-admin user as well, and so be able to test the routes in postman. Once I had made the majority of the apps I moved onto the biggest app I had, which was the products app, I chose to make an app for the legal category so that I could map into a dropdown menu on the frontend when a user was creating a new product. One of the keys I had on the products was:
+These allowed me to make a non-admin user as well, and so be able to test the routes in postman. I chose to make an app for the legal category so that I could map into a dropdown menu on the frontend when a user was creating a new product. Once I had made the majority of the apps I moved onto the biggest app I had, which was the products app. One of the keys I had on the products was linked to the User model:
 
 ```py
 owner = models.ForeignKey('jwt_auth.User', related_name="products", on_delete=models.CASCADE)
 ```
 
-This meant the product would need to input a user id to create a product, this is there as I have specialised the views so that only the owner of a product or admin can edit that product so I didn’t want people to have to enter it themselves. I added a simple line in the views which meant no one would have to:
+This meant a user id would be required to create a product. This is designed so that only the owner of a product or admin can edit the product. The id is not entered by the user, but generated from the information on the token:
 
 ```py
 request.data['owner'] = request.user.id
 ```
 
-This says the owner of that product is the id or the user making the request.
-
-I knew I wanted search functionality but we hadn’t been taught it in class, however I looked into it and we have done search functionality in other languages so I decided to attempt it here. I wanted to be able to search the products by name, appearance or primary use. The appearance would come from the form key but this would never be displayed frontend so it would give the illusion it was coming from the photos. I did the search like this:
+I knew I wanted search functionality but we hadn’t been taught it in class, however I looked into it and we have done search functionality in other languages so I decided to attempt it. I wanted to be able to search the products by name, appearance or primary use. The appearance would come from the ‘form’ key but this would never be displayed on the frontend so it would give the illusion it was coming from the photos. I did the search like this:
 
 ```py
 class ProductSearch(APIView):
@@ -139,9 +147,9 @@ serialied_results = ProductSerializer(results, many=True)
 return Response(serialied_results.data)
 ```
 
-I made a new class as it would have a route ending with ‘search/’, I then perform a get request and filter the products by it, to any containing the query in the name, form or primary use before putting it through the serializer.
+I made a new class as it would have a route ending with ‘search/’. I then perform a get request and filter the products by the query in the search bar. They are filtered by name, form or primary use before putting it through the serializer.
 
-Once I created the front end app and connected the front and back end I worked on the product index first. I did an API call to get all the products and mapped over them on an individual product card to produce a gridded page with all the products. I then used a useEffect to have a responsive search bar working in the products index:
+Once I created the front end app and connected the front and back end I worked on the product index first. I did an API call to ‘get’ all the products and mapped over them on an individual product card to produce a gridded page with all the products. I then used a useEffect to have a responsive search bar working in the products index:
 
 ```js
 useEffect(() => {
@@ -191,7 +199,7 @@ I also decided to do a few drop down options so that there wouldn’t be invalid
 <MenuItem onClick={navigateToCreateBrand}>Not There?</MenuItem>
 ```
 
-If you click on this option from the dropdown you’re immediately taken to the create a brand page. From there there is a submit button which will take you back to the create a product page:
+If you click on this option from the dropdown you’re immediately taken to the create a brand page. From there there is a submit button which will submit the new brand and take you back to the create a product page so you can complete you initial action:
 
 ```js
 const handleSubmitAndNextAdd = (e) => {
@@ -214,7 +222,7 @@ I did this to help allow for a smooth and easy experience for the user.
 
 # Challenges
 
-I had to create a route in which only the admin could make that API call. I played around with what is returned in the user body that Django provides and decided not to create an is_admin key on the user but instead, use the is_staff key. I inputted this onto the backend code for the admin being able to GET all the requests of change people had sent in. However, when this came to the front-end, I was not able to attach headers to my get request. I could have made a new front-end route, or I could have changed the backend. I decided to alter the def get to a def post:
+I had to create a route in which only the admin could make that API call. I played around with what is returned in the user body that Django provides and decided not to create an is_admin key on the user but instead, use the is_staff key. I inputted this onto the backend code for the admin being able to ‘get’ all the requests of change people had sent in. However, when this came to the front-end, I was not able to attach headers to my get request. I could have made a new front-end route, or I could have changed the backend. I decided to alter the ‘def get’ to a ‘def post’:
 
 ```py
 class RequestsListView(APIView):
@@ -245,11 +253,11 @@ useEffect(() => {
 
 # Wins
 
-We had the choose to go solo or in a group for this project, as I have been in a group the majority of the time and as I wanted to test myself I decided to go alone, even though I knew it would be tough to produce the level of finished product I had in my mind, but I am very proud that I managed to do it on my own. I think it can be nice to work in a group but it’s a great feeling to achieve a product and know you were responsible for everything.
+We had the choice to go solo or in a group for this project, as I have been in a group the majority of the time and as I wanted to test myself I decided to go alone. I knew it would be hard work to produce the polished product I had in my mind. I am very proud that I managed to do it on my own. I think it can be nice to work in a group but it’s a great feeling to achieve a product and know you were responsible for everything. I am also proud of the search functionality. To be able to complete something without being directly taught has given me confidence in translating my knowledge from one language to another and investigating documentation.
 
 # Key Learnings/Takeaways
 
-Through all the projects it has been vital to plan your work ahead of time, but with groups the idea evolves in many ways throughout the process and you must be flexible to work with this. On a solo project the planning is essential, you cannot just muddle your way through. I am grateful I made such a detailed plan and knew exactly where I wanted to take the application next. This saved a lot of time and made the execution of each task much smoother. I feel a lot more comfortable with python now that I have built something with it. The practical experience has made some concepts much clearer for me.
+Through all the projects it has been vital to plan your work ahead of time, but with groups the idea evolves in many ways throughout the process and you must be flexible to work with this. On a solo project the planning is essential, you cannot just muddle your way through. I am grateful I made such a detailed plan and knew exactly where I wanted to take the application next. This saved a lot of time and made the execution of each task much smoother. I feel a lot more comfortable with python now that I have built something. The practical experience has made overall concepts much clearer for me.
 
 # Bugs
 
@@ -257,4 +265,7 @@ I added a stretch goal of having a medical tracker, to keep your medications in 
 
 # Future Improvements
 
-A future improvement I would have would definitely be to change the image URL to cloudinary images, like I did on project-3. I would also improve the responsiveness of the app. I would ideally like to add a time which you take your medication onto the model for medication list, that way the app can send you notifications to ensure you don’t forget.
+Firstly I would fix the minor bugs before adding anymore functionality. Then I would:
+
+- Change the image URL to cloudinary images, like I did on project-3. I would also improve the responsiveness of the app.
+- Add a time to the medication tracker, that way the app can send you notifications to ensure you don’t forget.
