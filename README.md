@@ -2,11 +2,12 @@
 
 # Description
 
-This was the fourth project in the General Assembly software engineering immersive. For this project I had one week to create a full stack app. We had the choice to go solo or in a group, and I chose to try on my own. I wanted to push myself and see what I could do after three months of learning, and I had only done one project on my own in the past. The project had a Django backend, using postgres, and the front end was a React.js app. I decided to go for a passion of mine, medical tech - and create a medical information and tracker website.
+This was the fourth project in the General Assembly Software Engineering Immersive. For this project I had one week to create a full stack app. We had the choice to go solo or in a group, and I chose to try on my own. I wanted to push myself and see what I could do after three months of learning, and I had only done one project on my own in the past. The project had a Django back-end, using Postgres, and the front-end was a React.js app. I decided to go for a passion of mine, medical tech - and create a medical information and tracker website.
 
 # Deployment link
 
 https://medichecker.netlify.app
+
 You can log in with the credentials:
 
 - Username: Test
@@ -36,9 +37,9 @@ pipenv install
 python manage.py runserver
 ```
 
-Into the back end to get it started.
+Into the back-end to get it started.
 
-For the front end simply run:
+For the front-end simply run:
 
 ```js
 npm install
@@ -91,7 +92,7 @@ I did a wireframe of the frontend so I went in with a clear idea of what I was g
 
 # Build/Code Process
 
-I started by creating the project in the back end, then creating a superuser and beginning on the separate apps. I started with the user model, and I created a login and register view:
+I started by creating the project in the back-end, then creating a superuser and beginning on the separate apps. I started with the user model, and I created a login and register view:
 
 ```py
 class RegisterView(APIView):
@@ -124,7 +125,7 @@ class LoginView(APIView):
         return Response({'token': token, 'message': f"Welcome back {user_to_login.username}!"})
 ```
 
-These allowed me to make a non-admin user as well, and so be able to test the routes in postman. I chose to make an app for the legal category so that I could map into a dropdown menu on the frontend when a user was creating a new product. Once I had made the majority of the apps I moved onto the biggest app I had, which was the products app. One of the keys I had on the products was linked to the User model:
+These allowed me to make a non-admin user as well, and so be able to test the routes in postman. I chose to make an app for the legal category so that I could map into a dropdown menu on the front-end when a user was creating a new product. Once I had made the majority of the apps I moved onto the biggest app I had, which was the products app. One of the keys I had on the products was linked to the User model:
 
 ```py
 owner = models.ForeignKey('jwt_auth.User', related_name="products", on_delete=models.CASCADE)
@@ -136,7 +137,7 @@ This meant a user id would be required to create a product. This is designed so 
 request.data['owner'] = request.user.id
 ```
 
-I knew I wanted search functionality but we hadn’t been taught it in class, however I looked into it and we have done search functionality in other languages so I decided to attempt it. I wanted to be able to search the products by name, appearance or primary use. The appearance would come from the ‘form’ key but this would never be displayed on the frontend so it would give the illusion it was coming from the photos. I did the search like this:
+I knew I wanted search functionality but we hadn’t been taught it in class, however I looked into it and we have done search functionality in other languages so I decided to attempt it. I wanted to be able to search the products by name, appearance or primary use. The appearance would come from the ‘form’ key but this would never be displayed on the front-end so it would give the illusion it was coming from the photos. I did the search like this:
 
 ```py
 class ProductSearch(APIView):
@@ -222,7 +223,7 @@ I did this to help allow for a smooth and easy experience for the user.
 
 # Challenges
 
-I had to create a route in which only the admin could make that API call. I played around with what is returned in the user body that Django provides and decided not to create an is_admin key on the user but instead, use the is_staff key. I inputted this onto the backend code for the admin being able to ‘get’ all the requests of change people had sent in. However, when this came to the front-end, I was not able to attach headers to my get request. I could have made a new front-end route, or I could have changed the backend. I decided to alter the ‘def get’ to a ‘def post’:
+I had to create a route in which only the admin could make that API call. I played around with what is returned in the user body that Django provides and decided not to create an is_admin key on the user but instead, use the is_staff key. I inputted this onto the back-end code for the admin being able to ‘get’ all the requests of change people had sent in. However, when this came to the front-end, I was not able to attach headers to my get request. I could have made a new front-end route, or I could have changed the back-end. I decided to alter the ‘def get’ to a ‘def post’:
 
 ```py
 class RequestsListView(APIView):
@@ -253,15 +254,17 @@ useEffect(() => {
 
 # Wins
 
-We had the choice to go solo or in a group for this project, as I have been in a group the majority of the time and as I wanted to test myself I decided to go alone. I knew it would be hard work to produce the polished product I had in my mind. I am very proud that I managed to do it on my own. I think it can be nice to work in a group but it’s a great feeling to achieve a product and know you were responsible for everything. I am also proud of the search functionality. To be able to complete something without being directly taught has given me confidence in translating my knowledge from one language to another and investigating documentation.
+We had the choice to go solo or in a group for this project, as I have been in a group the majority of the time and as I wanted to test myself I decided to go alone. I knew it would be hard work to produce the polished product I had in my mind. I am very proud that I managed to do it on my own. I think it can be nice to work in a group but it’s a great feeling to achieve a product and know you were responsible for everything.
+
+I am also proud of the search functionality. To be able to complete something without being directly taught has given me confidence in translating my knowledge from one language to another and investigating documentation.
 
 # Key Learnings/Takeaways
 
-Through all the projects it has been vital to plan your work ahead of time, but with groups the idea evolves in many ways throughout the process and you must be flexible to work with this. On a solo project the planning is essential, you cannot just muddle your way through. I am grateful I made such a detailed plan and knew exactly where I wanted to take the application next. This saved a lot of time and made the execution of each task much smoother. I feel a lot more comfortable with python now that I have built something. The practical experience has made overall concepts much clearer for me.
+Through all the projects it has been vital to plan your work ahead of time, but with groups the idea evolves in many ways throughout the process and you must be flexible to work with this. On a solo project the planning is essential, you cannot just muddle your way through. I am grateful I made such a detailed plan and knew exactly where I wanted to take the application next. This saved a lot of time and made the execution of each task much smoother. I feel a lot more comfortable with Python now that I have built something. The practical experience has made overall concepts much clearer for me.
 
 # Bugs
 
-I added a stretch goal of having a medical tracker, to keep your medications in their own list. I managed to get a favourites icon onto the product card and link it to the watchlist, however if you click the button more than once it repeatedly adds the product, and the heart icons do not stay checked if you move off the page and come back to it.
+I added a stretch goal of having a medical tracker, to keep your medications in their own list. I managed to get a favourites icon onto the product card and link it to the watchlist, however if you click the button more than once it repeatedly adds the product, and the heart icons do not stay checked if you move off the page and come back to it. To do this I would add in an if statement which checked if the product was already on the medication tracker, and if so - not add it again.
 
 # Future Improvements
 
